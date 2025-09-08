@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import android.content.Intent
+import android.widget.Button
 
 class ResultActivity : AppCompatActivity() {
     companion object {
@@ -16,6 +17,12 @@ class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
+
+        val backButton = findViewById<Button>(R.id.button)
+        backButton.setOnClickListener{
+            finish()
+        }
+
         if(intent != null){
             val colorCode = intent.getStringExtra(COLOR_KEY)
             try {
